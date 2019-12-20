@@ -2,7 +2,7 @@
 
 *Empath* is a tool for generating high-quality lexical categories [@Fast2016]. Transforming the bag-of-words into bags of lexical categories reduces the number of dimensions and improves the interpretability of the results.
 
-Ensemble classification on *Empath* categories is about 70% accurate at classifying character gender (table \@ref(fig:empathCharConfusion)).
+Ensemble classification on *Empath* categories is about 70% accurate at classifying character gender (table \@ref(tab:empathCharConfusion)).
 
 To examine the interaction between author gender and character writing, I plotted lexical category frequency for male and female characters by author gender.
 
