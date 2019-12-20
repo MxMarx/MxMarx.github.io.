@@ -1,0 +1,38 @@
+--- 
+title: "A quantitative analysis of gender in fictional characters"
+author: "R. Marx"
+date: "`r Sys.Date()`"
+description: "Computational gender studies"
+url: 'https\://github.com/MxMarx/'
+github-repo: "MxMarx/MxMarx.github.io"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    split_by: "chapter"
+    split_bib: no
+    config:
+      sharing:
+        github: yes
+      toc:
+        collapse: none
+        before: |
+          <li><a href="./introduction.html">A quantitative analysis of gender in fictional characters</a></li>
+          <li><a>R. Marx, 2019</a></li>
+      edit: https://github.com/MxMarx/MxMarx.github.io/%s
+documentclass: book
+bibliography: "references.bib"
+link-citations: yes
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE)
+library(plotly)
+# if (!require("DT")) install.packages('DT')
+library(DT)
+```
+
+
+
+

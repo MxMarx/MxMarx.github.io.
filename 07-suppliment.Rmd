@@ -1,0 +1,35 @@
+# Supplemental data
+
+## Differentially expressed words for female characters
+```{R femaleCharTable, fig.cap="Words associated with female characters"}
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char.csv")
+female = subset(data, padj < 0.1 & log2FoldChange < 0)
+datatable(female, colnames=c("Word"="X"), rownames=FALSE) %>%
+    formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
+```
+
+## Differentially expressed words for male characters
+```{R maleCharTable, fig.cap="Words associated with male characters"}
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char.csv")
+male = subset(data, padj < 0.1 & log2FoldChange > 0)
+female = subset(data, padj < 0.1 & log2FoldChange < 0)
+datatable(male, colnames=c("Word"="X"), rownames=FALSE) %>%
+    formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
+```
+
+## Differentially expressed words for female authors
+```{R femaleAuthTable, fig.cap="Words associated with female authors"}
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F.csv")
+female = subset(data, padj < 0.1 & log2FoldChange < 0)
+datatable(female, colnames=c("Word"="X"), rownames=FALSE) %>%
+    formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
+```
+
+## Differentially expressed words for male authors
+```{R maleAuthTable, fig.cap="Words associated with male authors"}
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F.csv")
+male = subset(data, padj < 0.1 & log2FoldChange > 0)
+female = subset(data, padj < 0.1 & log2FoldChange < 0)
+datatable(male, colnames=c("Word"="X"), rownames=FALSE) %>%
+    formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
+```
