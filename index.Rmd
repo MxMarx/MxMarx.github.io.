@@ -4,7 +4,7 @@ author: "R. Marx"
 date: "`r Sys.Date()`"
 description: "Computational gender studies"
 url: 'https\://github.com/MxMarx/'
-github-repo: "MxMarx/MxMarx.github.io"
+github-repo: "MxMarx/quantitative-analysis-of-gender-in-fictional-characters/settings"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
@@ -18,7 +18,7 @@ output:
         before: |
           <li><a href="./introduction.html">A quantitative analysis of gender in fictional characters</a></li>
           <li><a>R. Marx, 2019</a></li>
-      edit: https://github.com/MxMarx/MxMarx.github.io/%s
+      edit: https://github.com/MxMarx/quantitative-analysis-of-gender-in-fictional-characters/edit/master/%s
 documentclass: book
 bibliography: "references.bib"
 link-citations: yes
