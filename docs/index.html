@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Methods | A quantitative analysis of gender in fictional characters</title>
+  <title>A quantitative analysis of gender in fictional characters</title>
   <meta name="description" content="Computational gender studies" />
   <meta name="generator" content="bookdown 0.16.5 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Methods | A quantitative analysis of gender in fictional characters" />
+  <meta property="og:title" content="A quantitative analysis of gender in fictional characters" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/MxMarx/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MxMarx/MxMarx.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Methods | A quantitative analysis of gender in fictional characters" />
+  <meta name="twitter:title" content="A quantitative analysis of gender in fictional characters" />
   
   <meta name="twitter:description" content="Computational gender studies" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="results-genre.html"/>
+
+<link rel="next" href="methods.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -119,33 +119,27 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1">
-<h1><span class="header-section-number">2</span> Methods</h1>
-<div id="book-corpus" class="section level2">
-<h2><span class="header-section-number">2.1</span> Book corpus</h2>
-<p>This study used 6,462 of the 10,000 most populared books listed on goodreads.com <span class="citation">(Zając <a href="references.html#ref-goodbooks-10k">2018</a>)</span>.</p>
-<p>Author gender was estimated using baby name popularity from 20-60 years prior to publication date <span class="citation">(Social Security Administration <a href="references.html#ref-SocialSecurity">2019</a>)</span>. When multiple authors were listed, the first author’s name was used. I manually annotated the most common authors whose first name was not listed in the database. This method doesn’t account for ghost writers, pen names, multiple authors, writers born outside the United States, or name-gender discrepancies (for example, a person named “Russell” could be non-binary rather than male). To estimate gender accuracy, I manually reviewed 100 entires and found 2 incorrently gendered authors.</p>
-<p>Gender is not binary, and binary classification of author gender is only a convenient approximation.</p>
+<div id="header">
+<h1 class="title">A quantitative analysis of gender in fictional characters</h1>
+<p class="author"><em>R. Marx</em></p>
+<p class="date"><em>2019-12-20</em></p>
 </div>
-<div id="natural-language-processing" class="section level2">
-<h2><span class="header-section-number">2.2</span> Natural language processing</h2>
-<p>Lemmatization and part-of-speech tagging was performed with Spacy <span class="citation">(Honnibal and Montani <a href="references.html#ref-spacy2">2017</a>)</span>, and character coreferences were resolved with NeuralCoref <span class="citation">(Chaumond <a href="references.html#ref-NeuralCoref">2019</a>)</span>.</p>
-<p>Characters were defined as entities with 50 or more coreferenced pronouns. Character gender was determined by pronoun usage.</p>
-<p>Bags-of-words were extracted for each sentance where a character was referenced.</p>
-</div>
-<div id="differential-expression" class="section level2">
-<h2><span class="header-section-number">2.3</span> Differential expression</h2>
-<p>The assumptions when comparing bags of words are remarkably similar to those in analyzing differential expression of next-gen RNA sequencing data. I took advantage of this by using DESeq2 to <span class="citation">(Love, Huber, and Anders <a href="references.html#ref-DESeq2">2014</a>)</span> apply generalized linear models with a negative binomial distribution to estimate differences in word frequency.</p>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>I started this project with the goal of answering this question: “if you take a character in a novel and replace all direct references to their gender such as pronouns with gender-neutral alternatives, how accurately could you predict their gender?”</p>
+<p>The steps required to answer this question led to even more questions, and this project’s scope has grown to include examinations of author and genre bias.</p>
+<p>Gendered stereotypes influence behavior. The embodied approach to cognition views cognition as grounded in the body, so socially imposed perceptions of body might shape gendered behavior <span class="citation">(Lee <a href="references.html#ref-Lee2016">2016</a>)</span>. While writing a novel, an author might image the perspective of their characters. By embodying a character, the author’s cognition becomes grounded in an imaged body and their writing might reflect their interpretation of the body.</p>
+<p>The interpretation and generalizing of gender differences risks perpetuating stereotypes and gender essentialism <span class="citation">(Koolen and Cranenburgh <a href="references.html#ref-Koolen2017">2017</a>)</span>. Examining gender differences in fictional characters provides an opportunity to explore gender stereotypes and examine some of variables confounding the interpretation of lexical differences between male and female authors.</p>
+<p>Viewing gender through the lens of performativity can sometimes be intepreted to invalidate self-determined queer and trans identities, but TERFS can fuck off <span class="citation">(Finlay <a href="references.html#ref-Finlay2017">2017</a>)</span>.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="results-genre.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="methods.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -176,7 +170,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MxMarx/MxMarx.github.io/03-methods.Rmd",
+"link": "https://github.com/MxMarx/MxMarx.github.io/index.Rmd",
 "text": "Edit"
 },
 "history": {
