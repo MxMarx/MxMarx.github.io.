@@ -14,7 +14,7 @@ Lemmatization and part-of-speech tagging was performed with Spacy [@spacy2], and
 
 Characters were defined as entities with 50 or more coreferenced pronouns. Character gender was determined by pronoun usage.
 
-Bags-of-words were extracted for each sentance where a character was referenced.
+Bags-of-words were extracted for each sentence where a character was referenced.
 
 ## Differential expression
 The assumptions when comparing bags of words are remarkably similar to those in analyzing differential expression of next-gen RNA sequencing data. I took advantage of this by using DESeq2 to [@DESeq2] apply generalized linear models with a negative binomial distribution to estimate differences in word frequency.

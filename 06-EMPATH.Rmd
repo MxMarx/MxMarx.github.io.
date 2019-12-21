@@ -10,7 +10,6 @@ To examine the interaction between author gender and character writing, I plotte
 
 
 ```{r empathCharConfusion, fig.cap="Predicted character gender using EMPATH categories."}
-library(kableExtra)
 DT = data.frame(TM=c(5793,2214), TF=c(1343,2323))
 row.names(DT) <- c("True Male","True Female")
 

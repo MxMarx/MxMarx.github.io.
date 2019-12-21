@@ -52,6 +52,26 @@ images = "Images/CharCountByGender.png"
 knitr::include_graphics(images)
 ```
 
+## Classifying author gender using genre tags
+
+Genre tags alone, can classify author gender with 83% accuracy (table \@ref(tab:tagsAuthConfusion)). The list of tags can be found in (table \@ref(fig:tagFrequencies)).
+
+
+
+```{r tagsAuthConfusion, fig.cap="Predicted character gender using EMPATH categories."}
+DT = data.frame(TM=c(1822,430), TF=c(319,1938))
+row.names(DT) <- c("True Male","True Female")
+
+knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = 'Predicted author gender using tags') %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  column_spec(1, bold = T)
+
+```
+
+
+
+
+
 ## Character frequency
 
 Female minor characters are relatively underrepresented as shown by a reduced probability that female characters make fewer appearances in the text (fig \@ref(fig:maleAsDefault1)). This might reflect the concept of “male-as-default”, where non-gender-specific characters are mostly portrayed as male.

@@ -24,7 +24,7 @@
 <meta name="author" content="R. Marx" />
 
 
-<meta name="date" content="2019-12-20" />
+<meta name="date" content="2019-12-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,17 +91,19 @@
 <li class="chapter" data-level="3" data-path="results-genre.html"><a href="results-genre.html"><i class="fa fa-check"></i><b>3</b> Results - Genre</a><ul>
 <li class="chapter" data-level="3.1" data-path="results-genre.html"><a href="results-genre.html#author-gender-by-genre"><i class="fa fa-check"></i><b>3.1</b> Author gender by genre</a></li>
 <li class="chapter" data-level="3.2" data-path="results-genre.html"><a href="results-genre.html#character-gender-by-genre"><i class="fa fa-check"></i><b>3.2</b> Character gender by genre</a></li>
-<li class="chapter" data-level="3.3" data-path="results-genre.html"><a href="results-genre.html#character-frequency"><i class="fa fa-check"></i><b>3.3</b> Character frequency</a></li>
+<li class="chapter" data-level="3.3" data-path="results-genre.html"><a href="results-genre.html#classifying-author-gender-using-genre-tags"><i class="fa fa-check"></i><b>3.3</b> Classifying author gender using genre tags</a></li>
+<li class="chapter" data-level="3.4" data-path="results-genre.html"><a href="results-genre.html#character-frequency"><i class="fa fa-check"></i><b>3.4</b> Character frequency</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="results-differential-expression.html"><a href="results-differential-expression.html"><i class="fa fa-check"></i><b>4</b> Results - Differential Expression</a></li>
 <li class="chapter" data-level="5" data-path="results-empath.html"><a href="results-empath.html"><i class="fa fa-check"></i><b>5</b> Results - EMPATH</a></li>
-<li class="chapter" data-level="6" data-path="supplemental-data.html"><a href="supplemental-data.html"><i class="fa fa-check"></i><b>6</b> Supplemental data</a><ul>
-<li class="chapter" data-level="6.1" data-path="supplemental-data.html"><a href="supplemental-data.html#differentially-expressed-words-for-female-characters"><i class="fa fa-check"></i><b>6.1</b> Differentially expressed words for female characters</a></li>
-<li class="chapter" data-level="6.2" data-path="supplemental-data.html"><a href="supplemental-data.html#differentially-expressed-words-for-male-characters"><i class="fa fa-check"></i><b>6.2</b> Differentially expressed words for male characters</a></li>
-<li class="chapter" data-level="6.3" data-path="supplemental-data.html"><a href="supplemental-data.html#differentially-expressed-words-for-female-authors"><i class="fa fa-check"></i><b>6.3</b> Differentially expressed words for female authors</a></li>
-<li class="chapter" data-level="6.4" data-path="supplemental-data.html"><a href="supplemental-data.html#differentially-expressed-words-for-male-authors"><i class="fa fa-check"></i><b>6.4</b> Differentially expressed words for male authors</a></li>
+<li class="chapter" data-level="6" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html"><i class="fa fa-check"></i><b>6</b> Supplemental - differential expression</a><ul>
+<li class="chapter" data-level="6.1" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-female-characters"><i class="fa fa-check"></i><b>6.1</b> Differentially expressed words for female characters</a></li>
+<li class="chapter" data-level="6.2" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-male-characters"><i class="fa fa-check"></i><b>6.2</b> Differentially expressed words for male characters</a></li>
+<li class="chapter" data-level="6.3" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-female-authors"><i class="fa fa-check"></i><b>6.3</b> Differentially expressed words for female authors</a></li>
+<li class="chapter" data-level="6.4" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-male-authors"><i class="fa fa-check"></i><b>6.4</b> Differentially expressed words for male authors</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="chapter" data-level="7" data-path="supplemental-data-tag-frequency.html"><a href="supplemental-data-tag-frequency.html"><i class="fa fa-check"></i><b>7</b> Supplemental data - tag frequency</a></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
 </ul>
 
       </nav>
@@ -122,7 +124,7 @@
 <div id="header">
 <h1 class="title">A quantitative analysis of gender in fictional characters</h1>
 <p class="author"><em>R. Marx</em></p>
-<p class="date"><em>2019-12-20</em></p>
+<p class="date"><em>2019-12-21</em></p>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
@@ -130,7 +132,7 @@
 <p>The steps required to answer this question led to even more questions, and this project’s scope has grown to include examinations of author and genre bias.</p>
 <p>Gendered stereotypes influence behavior. The embodied approach to cognition views cognition as grounded in the body, so socially imposed perceptions of body might shape gendered behavior <span class="citation">(Lee <a href="references.html#ref-Lee2016">2016</a>)</span>. While writing a novel, an author might image the perspective of their characters. By embodying a character, the author’s cognition becomes grounded in an imaged body and their writing might reflect their interpretation of the body.</p>
 <p>The interpretation and generalizing of gender differences risks perpetuating stereotypes and gender essentialism <span class="citation">(Koolen and Cranenburgh <a href="references.html#ref-Koolen2017">2017</a>)</span>. Examining gender differences in fictional characters provides an opportunity to explore gender stereotypes and examine some of variables confounding the interpretation of lexical differences between male and female authors.</p>
-<p>Viewing gender through the lens of performativity can sometimes be intepreted to invalidate self-determined queer and trans identities, but TERFS can fuck off <span class="citation">(Finlay <a href="references.html#ref-Finlay2017">2017</a>)</span>.</p>
+<p>Viewing gender through the lens of performativity can sometimes be intepreted to invalidate self-determined queer and trans identities, but TERFs can fuck off <span class="citation">(Finlay <a href="references.html#ref-Finlay2017">2017</a>)</span>.</p>
 
 </div>
             </section>

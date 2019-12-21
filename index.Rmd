@@ -27,10 +27,12 @@ link-citations: yes
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, cache=TRUE)
 library(plotly)
 # if (!require("DT")) install.packages('DT')
 library(DT)
+library(kableExtra)
+
 ```
 
 
@@ -45,4 +47,4 @@ Gendered stereotypes influence behavior. The embodied approach to cognition view
 
  The interpretation and generalizing of gender differences risks perpetuating stereotypes and gender essentialism [@Koolen2017]. Examining gender differences in fictional characters provides an opportunity to explore gender stereotypes and examine some of variables confounding the interpretation of lexical differences between male and female authors.
  
-Viewing gender through the lens of performativity can sometimes be intepreted to invalidate self-determined queer and trans identities, but TERFS can fuck off [@Finlay2017].
+Viewing gender through the lens of performativity can sometimes be intepreted to invalidate self-determined queer and trans identities, but TERFs can fuck off [@Finlay2017].

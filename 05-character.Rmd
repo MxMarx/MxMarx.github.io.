@@ -45,12 +45,11 @@ p
 ```
 
 
-Next, I trained an ensemble learner to classify characters (table \@ref(tab:charBoWClass)) and authors (table \@ref(tab:authBoWClass)) by gender using DESeq2 normalized word counts. This model classified author gender with disturbing accuracy. A bad interpretation wouldn’t examine confounding variables such as genre. I’m not sure how best to do this. Goodreads.com tags are probably rather biased, and not an impartial estimator of genre. I might try classifying books by genre using their text, and independently classifying author by gender within a genre.
+Next, I trained an ensemble learner to classify characters (table \@ref(tab:charBoWClass)) and authors (table \@ref(tab:authBoWClass)) by gender using DESeq2 normalized word counts. This model classified author gender with disturbing accuracy. A bad interpretation would ignore variables such as genre. Goodreads.com tags are probably rather biased by author gender. Genre tags alone are only slightly less accurate at predicting author gender than the text (table \@ref(tab:tagsAuthConfusion)).
 
 An alternative method might be to adapt another technique from single-cell RNA-sequencing. I might be able to position books on a manifold in *genre-space*, and examine how author genders are distributed along the manifold. 
 
 ```{r authBoWClass, fig.cap="Predicted author gender using bag of words."}
-library(kableExtra)
 DT = data.frame(TM=c(1522,292), TF=c(298,1736))
 row.names(DT) <- c("True Male","True Female")
 knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = 'predicted author gender using bag of words.') %>%
@@ -59,7 +58,6 @@ knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = '
 ```
 
 ```{r charBoWClass, fig.cap="Predicted character gender using bag of words."}
-library(kableExtra)
 DT = data.frame(TM=c(1907,677), TF=c(359,879))
 row.names(DT) <- c("True Male","True Female")
 knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = 'Predicted character gender using bag of words.') %>%

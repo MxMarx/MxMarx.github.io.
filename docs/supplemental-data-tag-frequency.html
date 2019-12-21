@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Supplemental data - tag frequency | A quantitative analysis of gender in fictional characters</title>
+  <meta name="description" content="Computational gender studies" />
+  <meta name="generator" content="bookdown 0.16.5 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Supplemental data - tag frequency | A quantitative analysis of gender in fictional characters" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/MxMarx/" />
+  
+  <meta property="og:description" content="Computational gender studies" />
+  <meta name="github-repo" content="MxMarx/quantitative-analysis-of-gender-in-fictional-characters/settings" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Supplemental data - tag frequency | A quantitative analysis of gender in fictional characters" />
+  
+  <meta name="twitter:description" content="Computational gender studies" />
+  
+
+<meta name="author" content="R. Marx" />
+
+
+<meta name="date" content="2019-12-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="supplemental-differential-expression.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.49.4/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.49.4/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.10/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./introduction.html">A quantitative analysis of gender in fictional characters</a></li>
+<li><a>R. Marx, 2019</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>2</b> Methods</a><ul>
+<li class="chapter" data-level="2.1" data-path="methods.html"><a href="methods.html#book-corpus"><i class="fa fa-check"></i><b>2.1</b> Book corpus</a></li>
+<li class="chapter" data-level="2.2" data-path="methods.html"><a href="methods.html#natural-language-processing"><i class="fa fa-check"></i><b>2.2</b> Natural language processing</a></li>
+<li class="chapter" data-level="2.3" data-path="methods.html"><a href="methods.html#differential-expression"><i class="fa fa-check"></i><b>2.3</b> Differential expression</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="results-genre.html"><a href="results-genre.html"><i class="fa fa-check"></i><b>3</b> Results - Genre</a><ul>
+<li class="chapter" data-level="3.1" data-path="results-genre.html"><a href="results-genre.html#author-gender-by-genre"><i class="fa fa-check"></i><b>3.1</b> Author gender by genre</a></li>
+<li class="chapter" data-level="3.2" data-path="results-genre.html"><a href="results-genre.html#character-gender-by-genre"><i class="fa fa-check"></i><b>3.2</b> Character gender by genre</a></li>
+<li class="chapter" data-level="3.3" data-path="results-genre.html"><a href="results-genre.html#classifying-author-gender-using-genre-tags"><i class="fa fa-check"></i><b>3.3</b> Classifying author gender using genre tags</a></li>
+<li class="chapter" data-level="3.4" data-path="results-genre.html"><a href="results-genre.html#character-frequency"><i class="fa fa-check"></i><b>3.4</b> Character frequency</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="results-differential-expression.html"><a href="results-differential-expression.html"><i class="fa fa-check"></i><b>4</b> Results - Differential Expression</a></li>
+<li class="chapter" data-level="5" data-path="results-empath.html"><a href="results-empath.html"><i class="fa fa-check"></i><b>5</b> Results - EMPATH</a></li>
+<li class="chapter" data-level="6" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html"><i class="fa fa-check"></i><b>6</b> Supplemental - differential expression</a><ul>
+<li class="chapter" data-level="6.1" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-female-characters"><i class="fa fa-check"></i><b>6.1</b> Differentially expressed words for female characters</a></li>
+<li class="chapter" data-level="6.2" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-male-characters"><i class="fa fa-check"></i><b>6.2</b> Differentially expressed words for male characters</a></li>
+<li class="chapter" data-level="6.3" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-female-authors"><i class="fa fa-check"></i><b>6.3</b> Differentially expressed words for female authors</a></li>
+<li class="chapter" data-level="6.4" data-path="supplemental-differential-expression.html"><a href="supplemental-differential-expression.html#differentially-expressed-words-for-male-authors"><i class="fa fa-check"></i><b>6.4</b> Differentially expressed words for male authors</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="supplemental-data-tag-frequency.html"><a href="supplemental-data-tag-frequency.html"><i class="fa fa-check"></i><b>7</b> Supplemental data - tag frequency</a></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A quantitative analysis of gender in fictional characters</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="supplemental-data---tag-frequency" class="section level1">
+<h1><span class="header-section-number">7</span> Supplemental data - tag frequency</h1>
+<div class="figure"><span id="fig:tagFrequencies"></span>
+<div id="htmlwidget-032dccc09019d994fe37" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-032dccc09019d994fe37">{"x":{"filter":"none","data":[["fiction","fantasy","romance","young-adult","mystery","non-fiction","historical-fiction","classics","ya","science-fiction","contemporary","sci-fi","nonfiction","paranormal","thriller","horror","history","adult","to-buy","graphic-novels","ebook","chick-lit","audiobooks","crime","audio","childrens","urban-fantasy","humor","historical","adventure","comics","ebooks","novels","vampires","memoir","biography","children","contemporary-romance","picture-books","literature","suspense","paranormal-romance","adult-fiction","science","new-adult","wish-list","children-s","children-s-books","classic","read-in-2015","manga","short-stories","my-library","read-in-2016","magic","read-in-2014","graphic-novel","philosophy","dystopian","mystery-thriller","sci-fi-fantasy","realistic-fiction","supernatural","read-in-2013","audible","kids","poetry","mysteries","abandoned","psychology","business","novel","scifi","contemporary-fiction","dystopia","audio-books","drama","teen","childhood","historical-romance","read-in-2012","e-book","middle-grade","literary-fiction","audio-book","own-it","general-fiction","e-books","dnf","vampire","did-not-finish","funny","books","memoirs","childrens-books","american","plays","erotica","english","school","read-2015","politics","maybe","war","action","read-in-2011","read-2016","bookclub","read-2014","read-in-2017","family","1001-books","kids-books","fantasy-sci-fi","have","stephen-king","self-help","religion","christian","humour","sf","british","favorite-books","borrowed","epic-fantasy","read-2013","ya-fiction","comedy","4-stars","high-fantasy","scifi-fantasy","20th-century","mythology","coming-of-age","shelfari-favorites","unfinished","childhood-favorites","ya-fantasy","1001","reviewed","high-school","young-adult-fiction","angels","classic-literature","harry-potter"],[59.0070851859612,54.930587463213,9.20971725206173,26.814410799441,41.7360229270592,69.2384431971358,39.9258358740832,75.5411495620777,24.490985303204,78.5057487907655,23.303087834974,78.5012923089,67.1463706757584,11.964472663849,73.7783807319887,84.3463275033694,75.5520217493569,34.6119551639741,52.1538687722345,87.6966133218088,43.1463797592033,5.5538644025653,49.5267584407531,49.8186227888587,47.6304086081459,55.290429174337,25.0370278928126,66.2468966290277,36.8577449360203,69.8606596721488,93.2880793450389,43.2475353910318,66.0776056105431,10.1683377888362,44.5830566423616,64.1832161273496,54.304668698142,3.95528380595523,66.1696955218913,75.8198362384169,53.1814965116781,1.54560144612003,41.9350526657046,86.2202293366931,5.48562883870973,46.4243679167548,54.6741792623857,54.9843487429908,74.4983818676743,37.3602978205196,33.1781098941779,65.7198532995683,60.7652519287344,36.8592339351939,32.0907794921313,35.4761691973697,84.2228371545546,90.9333788300649,37.5714945403743,54.5631048849239,65.3885455301295,28.9770445203182,27.1042184036252,32.1907848249723,55.3765186078825,54.8090498597153,76.085159107331,37.6385998750385,58.458494904473,75.4688125015553,91.0646196853874,67.542132883265,82.9540136647636,45.9799545123781,44.1167506575747,50.3058845215741,48.434985294599,25.2452464685237,51.2563765095022,2.902849351562,31.5239867264215,37.6717839324826,45.2176006126614,57.1585242111809,49.5832732202344,49.392494176244,57.1380467273313,41.8412615996145,22.1390973903555,7.91853529004035,41.9752171043433,40.2035873468727,61.0258933184848,45.727752211071,57.3841062847811,73.1497787744348,86.1661074283491,3.95323607166401,68.7554582318822,65.0082017380836,36.6592082127157,79.5048081442064,33.8034065743103,75.3021540230884,68.4290609596163,31.1687907014021,37.8060001372272,40.8897634932617,33.3598456392653,35.7987058126107,30.2432283935948,75.8948026282969,54.7095945509122,61.3732173187047,44.2247719641131,100,73.2766986680568,80.0469461679523,83.9568305062515,75.0983076673774,84.142574307393,57.506341703943,35.9239543501619,51.4245778774366,78.0026042825388,28.1713852142788,26.9095297858151,68.1164069482257,17.1115580378557,55.5368320724383,69.9535766386118,71.7483598814942,48.7195531218414,38.1743987599252,52.3733117327695,66.7803186599414,43.3587162028706,22.4276639569574,76.256834593652,31.9975546283991,34.1565663252381,28.7415144215647,8.43400293150373,79.0842951253868,25.503751097583],[40.9929148140388,45.069412536787,90.7902827479383,73.185589200559,58.2639770729407,30.7615568028642,60.0741641259168,24.4588504379223,75.509014696796,21.4942512092345,76.696912165026,21.4987076911,32.8536293242416,88.035527336151,26.2216192680113,15.6536724966306,24.4479782506431,65.388044836026,47.8461312277655,12.3033866781912,56.8536202407967,94.4461355974347,50.4732415592469,50.1813772111413,52.3695913918541,44.709570825663,74.9629721071874,33.7531033709723,63.1422550639797,30.1393403278512,6.71192065496108,56.7524646089683,33.9223943894569,89.8316622111638,55.4169433576384,35.8167838726504,45.695331301858,96.0447161940448,33.8303044781087,24.1801637615831,46.8185034883219,98.45439855388,58.0649473342953,13.7797706633069,94.5143711612903,53.5756320832452,45.3258207376143,45.0156512570092,25.5016181323257,62.6397021794804,66.8218901058221,34.2801467004317,39.2347480712656,63.1407660648061,67.9092205078687,64.5238308026303,15.7771628454454,9.06662116993507,62.4285054596257,45.4368951150761,34.6114544698705,71.0229554796818,72.8957815963748,67.8092151750277,44.6234813921175,45.1909501402847,23.914840892669,62.3614001249615,41.541505095527,24.5311874984447,8.93538031461259,32.457867116735,17.0459863352364,54.0200454876219,55.8832493424253,49.6941154784259,51.565014705401,74.7547535314763,48.7436234904978,97.097150648438,68.4760132735784,62.3282160675174,54.7823993873386,42.8414757888191,50.4167267797656,50.607505823756,42.8619532726687,58.1587384003855,77.8609026096445,92.0814647099596,58.0247828956567,59.7964126531273,38.9741066815152,54.272247788929,42.6158937152189,26.8502212255652,13.8338925716509,96.046763928336,31.2445417681178,34.9917982619164,63.3407917872843,20.4951918557936,66.1965934256897,24.6978459769116,31.5709390403837,68.8312092985979,62.1939998627728,59.1102365067383,66.6401543607347,64.2012941873893,69.7567716064052,24.1051973717031,45.2904054490878,38.6267826812953,55.7752280358869,0,26.7233013319432,19.9530538320477,16.0431694937485,24.9016923326226,15.857425692607,42.493658296057,64.0760456498381,48.5754221225634,21.9973957174612,71.8286147857212,73.0904702141849,31.8835930517743,82.8884419621443,44.4631679275617,30.0464233613881,28.2516401185058,51.2804468781586,61.8256012400748,47.6266882672305,33.2196813400586,56.6412837971294,77.5723360430426,23.743165406348,68.0024453716009,65.8434336747619,71.2584855784353,91.5659970684963,20.9157048746132,74.496248902417],[10.626612134689,7.47271469947698,3.95587126933787,3.74913911135016,3.48684042528955,3.22362905379353,2.64407053040243,2.57130539632968,1.88788726005007,1.8614579987567,1.667553290651,1.49973574983455,1.40177270197749,1.30649333629089,1.25992745970027,1.23287054356808,1.13766885257886,1.06864313240716,1.04831199865504,1.01384872227025,0.977670254865784,0.973024298986623,0.928657194478362,0.90440278352429,0.899115651659005,0.896708333599245,0.873025809470139,0.856951711821275,0.812901798070215,0.75092063773825,0.713019457573814,0.701422008172355,0.697898458934502,0.676830002715314,0.673848303581123,0.670272754475466,0.630712989481934,0.611978428478335,0.592441698671989,0.587785393679546,0.585829409815104,0.579795633241438,0.577665341985197,0.572652112364254,0.567835727936406,0.562880857387052,0.551111810046409,0.550599198455319,0.521349900117425,0.491642769693382,0.488818244917006,0.488562625366677,0.47499283325524,0.463005931034285,0.455532342154784,0.45290891480204,0.431239744611049,0.428861173237543,0.42002338094243,0.417647395765091,0.409140985228897,0.402690966522083,0.39241986733091,0.392141163416546,0.388467296124239,0.369035318005635,0.368654406660228,0.365386210377963,0.363068867541886,0.360349996609855,0.359972481173543,0.359142718873784,0.358882253132525,0.355295551411181,0.352944351296582,0.343100544869291,0.32548278781207,0.319080439757731,0.316558530402099,0.314991627216256,0.308116615904176,0.306634730682815,0.293784146172663,0.289507756992938,0.287869999746795,0.287598896053338,0.278461495857755,0.272539849627191,0.268887226679666,0.266306878058721,0.261861374205429,0.26000094138458,0.258935169646142,0.258639858688765,0.255264683274352,0.248690586916746,0.245396809788461,0.243171127573509,0.24121978596677,0.239078769481874,0.223885991444746,0.223842838541601,0.221530304326031,0.214906290613927,0.211915276270637,0.211175720192734,0.21032709290247,0.208586597346683,0.20799893603561,0.206722224142132,0.2039337254865,0.203548854510495,0.201581290055136,0.199748113013478,0.198706618571853,0.198427305298684,0.196184026489777,0.195752076240283,0.192936528019586,0.188580004125011,0.184888033397728,0.182864821799952,0.181914479798091,0.178274568979312,0.17682984305697,0.176154495773836,0.174747388246265,0.171858245317849,0.164053382134249,0.162447053176354,0.160352207150469,0.159004151553136,0.15338714789147,0.148076180274863,0.145150694577123,0.144990906414206,0.1387052516653,0.138137352248884,0.133270120044467,0.130348709870046,0.125058517402444,0.119880195611185,0.11178417451076,0.0772221168209798,0.0226400976754653]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Tag<\/th>\n      <th>Male authors<\/th>\n      <th>Female authors<\/th>\n      <th>Frequency<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'color':'black','background-color':isNaN(parseFloat(value)) ? '' : value <= 8.5891 ? \"#0099FF\" : value <= 16.0821 ? \"#12A4FF\" : value <= 23.7782 ? \"#22AEFF\" : value <= 25.5038 ? \"#32B8FF\" : value <= 27.7445 ? \"#41C2FF\" : value <= 30.4283 ? \"#50CCFF\" : value <= 32.0721 ? \"#60D6FF\" : value <= 33.5373 ? \"#6FDFFF\" : value <= 35.4762 ? \"#7FE8FF\" : value <= 36.7783 ? \"#8EF0FF\" : value <= 37.5849 ? \"#9EF8FF\" : value <= 38.1007 ? \"#AEFFFF\" : value <= 41.2283 ? \"#BEFFFF\" : value <= 41.9752 ? \"#CAFFFF\" : value <= 43.8135 ? \"#D3FFFF\" : value <= 45.3196 ? \"#DCFFFF\" : value <= 47.3892 ? \"#E6FFFF\" : value <= 49.4462 ? \"#F0FFFF\" : value <= 50.3059 ? \"#FAFFFF\" : value <= 52.2855 ? \"#FFFEFB\" : value <= 54.5853 ? \"#FFFAF2\" : value <= 54.9063 ? \"#FFF7EA\" : value <= 55.4406 ? \"#FFF4E1\" : value <= 57.3841 ? \"#FFF1D9\" : value <= 60.062 ? \"#FFEED1\" : value <= 64.3482 ? \"#FFEAC9\" : value <= 66.0061 ? \"#FFE7C1\" : value <= 66.9267 ? \"#FFE3B8\" : value <= 68.4291 ? \"#FFD7A9\" : value <= 69.9164 ? \"#FFCB99\" : value <= 73.377 ? \"#FFBE89\" : value <= 75.2614 ? \"#FFB078\" : value <= 75.6591 ? \"#FFA167\" : value <= 76.2568 ? \"#FF9256\" : value <= 78.8529 ? \"#FF8244\" : value <= 83.1546 ? \"#FF7132\" : value <= 84.3216 ? \"#FF5F1D\" : \"#FF4D00\"});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'color':'black','background-color':isNaN(parseFloat(value)) ? '' : value <= 8.5891 ? \"#0099FF\" : value <= 16.0821 ? \"#12A4FF\" : value <= 23.7782 ? \"#22AEFF\" : value <= 25.5038 ? \"#32B8FF\" : value <= 27.7445 ? \"#41C2FF\" : value <= 30.4283 ? \"#50CCFF\" : value <= 32.0721 ? \"#60D6FF\" : value <= 33.5373 ? \"#6FDFFF\" : value <= 35.4762 ? \"#7FE8FF\" : value <= 36.7783 ? \"#8EF0FF\" : value <= 37.5849 ? \"#9EF8FF\" : value <= 38.1007 ? \"#AEFFFF\" : value <= 41.2283 ? \"#BEFFFF\" : value <= 41.9752 ? \"#CAFFFF\" : value <= 43.8135 ? \"#D3FFFF\" : value <= 45.3196 ? \"#DCFFFF\" : value <= 47.3892 ? \"#E6FFFF\" : value <= 49.4462 ? \"#F0FFFF\" : value <= 50.3059 ? \"#FAFFFF\" : value <= 52.2855 ? \"#FFFEFB\" : value <= 54.5853 ? \"#FFFAF2\" : value <= 54.9063 ? \"#FFF7EA\" : value <= 55.4406 ? \"#FFF4E1\" : value <= 57.3841 ? \"#FFF1D9\" : value <= 60.062 ? \"#FFEED1\" : value <= 64.3482 ? \"#FFEAC9\" : value <= 66.0061 ? \"#FFE7C1\" : value <= 66.9267 ? \"#FFE3B8\" : value <= 68.4291 ? \"#FFD7A9\" : value <= 69.9164 ? \"#FFCB99\" : value <= 73.377 ? \"#FFBE89\" : value <= 75.2614 ? \"#FFB078\" : value <= 75.6591 ? \"#FFA167\" : value <= 76.2568 ? \"#FF9256\" : value <= 78.8529 ? \"#FF8244\" : value <= 83.1546 ? \"#FF7132\" : value <= 84.3216 ? \"#FF5F1D\" : \"#FF4D00\"});\nDTWidget.formatSignif(this, row, data, 1, 3, 3, \",\", \".\");\nDTWidget.formatSignif(this, row, data, 2, 3, 3, \",\", \".\");\nDTWidget.formatSignif(this, row, data, 3, 3, 3, \",\", \".\");\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 7.1: Goodreads.com tag frequency by author gender
+</p>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="supplemental-differential-expression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/MxMarx/quantitative-analysis-of-gender-in-fictional-characters/edit/master/07-suppliment.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

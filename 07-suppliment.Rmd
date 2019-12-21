@@ -1,35 +1,57 @@
-# Supplemental data
+# Supplemental - differential expression
+
+```{R}
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char.csv")
+femaleChar = subset(data, padj < 0.1 & log2FoldChange < 0)
+maleChar = subset(data, padj < 0.1 & log2FoldChange < 0)
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F.csv")
+femaleAuth = subset(data, padj < 0.1 & log2FoldChange < 0)
+maleAuth = subset(data, padj < 0.1 & log2FoldChange > 0)
+```
 
 ## Differentially expressed words for female characters
 ```{R femaleCharTable, fig.cap="Words associated with female characters"}
-data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char.csv")
-female = subset(data, padj < 0.1 & log2FoldChange < 0)
-datatable(female, colnames=c("Word"="X"), rownames=FALSE) %>%
+
+datatable(femaleChar, colnames=c("Word"="X"), rownames=FALSE) %>%
     formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
 ```
 
 ## Differentially expressed words for male characters
 ```{R maleCharTable, fig.cap="Words associated with male characters"}
-data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char.csv")
-male = subset(data, padj < 0.1 & log2FoldChange > 0)
-female = subset(data, padj < 0.1 & log2FoldChange < 0)
-datatable(male, colnames=c("Word"="X"), rownames=FALSE) %>%
+datatable(maleChar, colnames=c("Word"="X"), rownames=FALSE) %>%
     formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
 ```
 
 ## Differentially expressed words for female authors
 ```{R femaleAuthTable, fig.cap="Words associated with female authors"}
-data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F.csv")
-female = subset(data, padj < 0.1 & log2FoldChange < 0)
-datatable(female, colnames=c("Word"="X"), rownames=FALSE) %>%
+
+datatable(femaleAuth, colnames=c("Word"="X"), rownames=FALSE) %>%
     formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
 ```
 
 ## Differentially expressed words for male authors
 ```{R maleAuthTable, fig.cap="Words associated with male authors"}
-data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F.csv")
-male = subset(data, padj < 0.1 & log2FoldChange > 0)
-female = subset(data, padj < 0.1 & log2FoldChange < 0)
-datatable(male, colnames=c("Word"="X"), rownames=FALSE) %>%
+
+datatable(maleAuth, colnames=c("Word"="X"), rownames=FALSE) %>%
     formatSignif(columns=c('baseMean', 'log2FoldChange', 'lfcSE', 'pvalue', 'padj'), digits=3)
+```
+
+# Supplemental data - tag frequency
+
+```{R tagFrequencies, fig.cap="Goodreads.com tag frequency by author gender"}
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/tagFrequency.csv")
+
+brks <- quantile(data$M, probs = seq(.05, .95, .025), na.rm = TRUE)
+
+
+colormap <- Rgnuplot:::GpdivergingColormap(seq(0,1,length.out= length(brks)+1),
+                                             rgb1 = colorspace::sRGB( 0, .6, 1),
+                                             rgb2 = colorspace::sRGB( 1, .3, 0),
+                                             outColorspace = "sRGB")
+colormap[colormap>1] <- 1 # sometimes values are slightly larger than 1
+colormap <- grDevices::rgb(colormap[,1], colormap[,2], colormap[,3])
+
+datatable(data, colnames=c("Tag","Male authors","Female authors","Frequency"), rownames=FALSE) %>% 
+  formatStyle(c('M','F'), backgroundColor = styleInterval(brks, colormap), color = 'black') %>% 
+  formatSignif(columns=c('M', 'F', 'frequency'), digits=3)
 ```
