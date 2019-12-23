@@ -3,7 +3,7 @@
 ```{R}
 data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char.csv")
 femaleChar = subset(data, padj < 0.1 & log2FoldChange < 0)
-maleChar = subset(data, padj < 0.1 & log2FoldChange < 0)
+maleChar = subset(data, padj < 0.1 & log2FoldChange > 0)
 data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F.csv")
 femaleAuth = subset(data, padj < 0.1 & log2FoldChange < 0)
 maleAuth = subset(data, padj < 0.1 & log2FoldChange > 0)
