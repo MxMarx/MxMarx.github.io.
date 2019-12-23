@@ -19,7 +19,7 @@ knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = '
 
 ```
 
-```{R empathPCA, fig.cap="First to principle components of *empath* categories"}
+```{R empathPCA, fig.cap="First two principle components of *empath* categories"}
 images = "Images/pca.png"
 knitr::include_graphics(images)
 ```
