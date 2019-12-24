@@ -24,7 +24,7 @@
 <meta name="author" content="R. Marx" />
 
 
-<meta name="date" content="2019-12-23" />
+<meta name="date" content="2019-12-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -125,19 +125,19 @@
 <h1><span class="header-section-number">2</span> Methods</h1>
 <div id="book-corpus" class="section level2">
 <h2><span class="header-section-number">2.1</span> Book corpus</h2>
-<p>This study used 6,462 of the 10,000 most populared books listed on goodreads.com <span class="citation">(Zając <a href="references.html#ref-goodbooks-10k">2018</a>)</span>.</p>
-<p>Author gender was estimated using baby name popularity from 20-60 years prior to publication date <span class="citation">(Social Security Administration <a href="references.html#ref-SocialSecurity">2019</a>)</span>. When multiple authors were listed, the first author’s name was used. I manually annotated the most common authors whose first name was not listed in the database. This method doesn’t account for ghost writers, pen names, multiple authors, writers born outside the United States, or name-gender discrepancies (for example, a person named “Russell” could be non-binary rather than male). To estimate gender accuracy, I manually reviewed 100 entires and found 2 incorrently gendered authors.</p>
+<p>This study used 6,462 of the 10,000 most popular books listed on goodreads.com <span class="citation">(Zając <a href="references.html#ref-goodbooks-10k">2018</a>)</span>.</p>
+<p>Author gender was estimated using baby name popularity from 20-60 years prior to publication date <span class="citation">(Social Security Administration <a href="references.html#ref-SocialSecurity">2019</a>)</span>. When multiple authors were listed, the first author’s name was used. I manually annotated the most common authors whose first name was not listed in the database. This method doesn’t account for ghost writers, pen names, multiple authors, writers born outside the United States, or name-gender discrepancies (for example, a person named “Russell” could be non-binary). To estimate this method’s accuracy, I manually reviewed 100 entries and found 2 incorrectly gendered authors.</p>
 <p>Gender is not binary, and binary classification of author gender is only a convenient approximation.</p>
 </div>
 <div id="natural-language-processing" class="section level2">
 <h2><span class="header-section-number">2.2</span> Natural language processing</h2>
 <p>Lemmatization and part-of-speech tagging was performed with Spacy <span class="citation">(Honnibal and Montani <a href="references.html#ref-spacy2">2017</a>)</span>, and character coreferences were resolved with NeuralCoref <span class="citation">(Chaumond <a href="references.html#ref-NeuralCoref">2019</a>)</span>.</p>
-<p>Characters were defined as entities with 50 or more coreferenced pronouns. Character gender was determined by pronoun usage.</p>
-<p>Bags-of-words were extracted for each sentence where a character was referenced.</p>
+<p>Individual characters were defined as entities with 25 or more coreferenced pronouns. Character gender was determined by pronoun usage.</p>
+<p>For each character, a bags-of-word was extracted for each sentence where they were referenced.</p>
 </div>
 <div id="differential-expression" class="section level2">
 <h2><span class="header-section-number">2.3</span> Differential expression</h2>
-<p>The assumptions when comparing bags of words are remarkably similar to those in analyzing differential expression of next-gen RNA sequencing data. I took advantage of this by using DESeq2 to <span class="citation">(Love, Huber, and Anders <a href="references.html#ref-DESeq2">2014</a>)</span> apply generalized linear models with a negative binomial distribution to estimate differences in word frequency.</p>
+<p>The assumptions required to compare bags-of-words are remarkably similar to those in analyzing differential expression of next-gen RNA sequencing data. I took advantage of this by using DESeq2 <span class="citation">(Love, Huber, and Anders <a href="references.html#ref-DESeq2">2014</a>)</span> to apply generalized linear models with a negative binomial distribution to estimate differences in word frequency between male and female characters and authors.</p>
 
 </div>
 </div>

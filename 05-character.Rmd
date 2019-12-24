@@ -43,9 +43,8 @@ p
 ```
 
 
-Next, I trained an ensemble learner to classify characters (table \@ref(tab:charBoWClass)) and authors (table \@ref(tab:authBoWClass)) by gender using DESeq2 normalized word counts. This model classified author gender with disturbing accuracy. A bad interpretation would ignore variables such as genre. Goodreads.com tags are probably rather biased by author gender. Genre tags alone are only slightly less accurate at predicting author gender than the text (table \@ref(tab:tagsAuthConfusion)).
+Next, I trained an ensemble learner to classify characters (table \@ref(tab:charBoWClass)) and authors (table \@ref(tab:authBoWClass)) by gender using DESeq2 normalized word counts. This model classified author gender with disturbing accuracy. A bad interpretation would ignore confounding variables such as gender imbalances in genre. Goodreads.com tags are probably rather biased by author gender. Genre tags alone are only slightly less accurate at predicting author gender than the text (table \@ref(tab:tagsAuthConfusion)).
 
-An alternative method might be to adapt another technique from single-cell RNA-sequencing. I might be able to position books on a manifold in *genre-space*, and examine how author genders are distributed along the manifold. 
 
 ```{r authBoWClass, fig.cap="Predicted author gender using bag of words."}
 DT = data.frame(TM=c(1522,292), TF=c(298,1736))
@@ -64,7 +63,11 @@ knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = '
   column_spec(1, bold = T)
 ```
 
-
+The difference between predicted gender for male and female characters was slightly larger for male authors (fig. \@ref(fig:genderScoreBoW)).  
+```{R genderScoreBoW, fig.cap="Character gender score using bag of words."}
+images = "Images/genderScore_bow.png"
+knitr::include_graphics(images)
+```
 
 
 
