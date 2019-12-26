@@ -27,7 +27,7 @@ link-citations: yes
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE, cache=TRUE)
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, cache=FALSE)
 library(plotly)
 # if (!require("DT")) install.packages('DT')
 library(DT)

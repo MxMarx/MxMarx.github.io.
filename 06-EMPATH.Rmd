@@ -25,6 +25,5 @@ To examine the interaction between author gender and character writing, I plotte
 
 ```{R empathWordCount}
 images = list.files("Images/BoxPlots/",pattern="*.png", full.name=TRUE)
-# images = "BoxPlots/science.png"
 knitr::include_graphics(images)
 ```
