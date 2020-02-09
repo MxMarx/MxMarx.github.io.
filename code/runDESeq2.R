@@ -13,10 +13,26 @@ cts <- as.matrix(read.csv("charCountsMystery.tsv",sep="\t",row.names="Row",quote
 coldata <- read.csv("charAnnotationMystery.tsv",sep="\t", row.names=1)
 
 
+.libPaths("/gscratch/stf/marxr/rpackages")
+setwd("/gscratch/stf/marxr")
+
+cts <- as.matrix(read.csv("charCounts.tsv",sep="\t",row.names="Row",quote=""))
+coldata <- read.csv("charAnnotation.tsv",sep="\t", row.names=1)
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("DESeq2")
+# cd /opt/rh/devtoolset-8
+# source enable
+# ./configure --prefix=/gscratch/stf/marxr/Rinstall
+# export PATH=/gscratch/stf/marxr/Rinstall/bin:$PATH
+library("BiocParallel")
 library("DESeq2")
+register(SnowParam(20))
+
 dds <- DESeqDataSetFromMatrix(countData = cts,
                               colData = coldata,
-                              design = ~ gender + author + gender:author)
+                              design = ~ gender)# + author + gender:author)
 
 
 dds <- DESeq(dds, test="Wald", parallel=TRUE)
@@ -27,15 +43,15 @@ dds <- DESeq(dds, test="Wald", parallel=TRUE)
 resultsNames(dds) # lists the coefficients
 res <- results(dds, name="gender_M_vs_F")
 # or to shrink log fold changes association with condition:
-res <- lfcShrink(dds, coef="gender_M_vs_F", type="apeglm")
+res <- lfcShrink(dds, coef="gender_M_vs_F", type="apeglm", parallel=TRUE)
+
+write.csv(as.data.frame(res[order(res$pvalue),]), 
+          file="gender_M_vs_F_char_large.csv")
 
 
 
 write.csv(as.data.frame(res[order(res$pvalue),]), 
           file="gender_M_vs_F_char_Mystery_Interaction.csv")
-
-write.csv(as.data.frame(res[order(res$pvalue),]), 
-          file="gender_M_vs_F_char.csv")
 
 write.csv(as.data.frame(res[order(res$pvalue),]), 
           file="gender_M_vs_F_char_Interaction_char.csv")

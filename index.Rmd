@@ -39,12 +39,13 @@ library(kableExtra)
 # Introduction
 
 
-I started this project with the goal of answering this question: "if you take a character in a novel and replace all direct references to their gender such as pronouns with gender-neutral alternatives, how accurately could you predict their gender?"
+I started this project with the goal of answering this question: "if you take a character in a novel and replace all direct references to their gender such as pronouns with gender-neutral alternatives, how accurately could you predict their gender?" 
 
-The steps required to answer this question led to even more questions, and this project’s scope has grown to include examinations of author and genre bias. 
+As with all gender-adjacent research that examines differences, it is important to examine any potentially confounding variables and critically contextualize the results. In order to soundly research my original question, I expanded the scope of this project to explore how genre and author gender influence the portrayal of fictional characters.
 
-Gendered stereotypes influence behavior. The embodied approach to cognition views cognition as grounded in the body, so socially imposed perceptions of body might shape gendered behavior [@Lee2016]. While writing a novel, an author might image the perspective of their characters. By embodying a character, the author’s cognition becomes grounded in an imaged body and their writing might reflect their interpretation of the body.
+The embodied approach to cognition views cognition is situated: inseparable from context and grounded in the body. Culturally imposed perception of bodies shapes their interaction with the world. Through this lens, the body is formed through its perceptions of the self, and gendered stereotypes and expectations shape these perceptions and influence behavior [@Huttunen2019; @Lee2016]. When writing a novel, an author might image the perspective of their characters. By embodying their characters, the author’s cognition becomes grounded in an imaged body and their writing might reflect their interpretation of the body.
 
- The interpretation and generalizing of gender differences risks perpetuating stereotypes and gender essentialism [@Koolen2017]. Examining gender differences in fictional characters provides an opportunity to explore gender stereotypes and examine some of variables confounding the interpretation of lexical differences between male and female authors.
- 
+Gendered stereotypes influence behavior. The embodied approach to cognition views cognition as grounded in the body, so socially imposed perceptions of body might shape gendered behavior [@Lee2016]. While writing a novel, an author might image the perspective of their characters. By embodying a character, the author’s cognition becomes grounded in an imaged body, and their expectations of the body might be reflected in their writing.
+
+The interpretation and generalization of gender differences risks perpetuating stereotypes and gender essentialism [@Koolen2017]. Examining gender differences in fictional characters provides an opportunity to explore gender stereotypes and examine potentially confounding variables in the interpretation of lexical differences between male and female authors. 
 Viewing gender through the lens of performativity can sometimes be intepreted to invalidate self-determined queer and trans identities, but TERFs can fuck off [@Finlay2017].

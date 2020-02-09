@@ -1,13 +1,13 @@
-# Results - EMPATH
+# Results - EMPATH scores
 
-*Empath* is a tool for generating high-quality lexical categories [@Fast2016]. Transforming the bag-of-words into bags of lexical categories reduces the number of dimensions and improves the interpretability of the results.
+*Empath* is a tool for generating high-quality lexical categories [@Fast2016]. Transforming the bag-of-words into bags of lexical categories reduces the number of dimensions and improves the interpretability of the results. To examine the interaction between author gender and character portrayal, I plotted lexical category frequency for male and female characters by author gender.
 
 Ensemble classification on *Empath* categories predicts character gender with an F1 score of 78.5% (table \@ref(tab:empathCharConfusion)). The difference in gender score is larger for male authors compared to female authors (fig. \@ref(fig:genderScoreEmpath)).
 
 
 ```{r empathCharConfusion, fig.cap="Predicted character gender using EMPATH categories."}
 DT = data.frame(TM=c(3988,1138), TF=c(1012,3862))
-row.names(DT) <- c("True Male","True Female")
+row.names(DT) <- c("Male Characters","Female Characters")
 
 knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = 'Predicted character gender using EMPATH categories.') %>%
   kable_styling(bootstrap_options = "striped", full_width = F) %>%
@@ -19,8 +19,6 @@ knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = '
 images = "Images/genderScore_empath.png"
 knitr::include_graphics(images)
 ```
-
-To examine the interaction between author gender and character writing, I plotted lexical category frequency for male and female characters by author gender.
 
 
 ```{R empathWordCount}

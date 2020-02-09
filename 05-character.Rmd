@@ -1,25 +1,25 @@
 # Results - Differential Expression
 
-To compare lexicons for male and female characters across all authors, I used DESeq2 to compare word frequencies across character gender. This process is computationally intensive, so I only included the 10,000 most frequent words, and the 3000 character with the highest read depth (the entire dataset includes 25,000 characters across 6000 books). Result are visualized in an interactive plot (fig \@ref(fig:volcanoPlotCharacter)). Differentially expressed words for female (table \@ref(fig:femaleCharTable)) and male (table \@ref(fig:maleCharTable)) characters are included in the supplemental data. 
+To compare lexicons for male and female characters across all authors, I used DESeq2 to compare word frequencies across character gender. This process is computationally intensive, so I only included the 10,000 most frequent words and 4000 characters with the highest read depth (the entire dataset includes 25,000 characters across 6000 books). Result are visualized in an interactive plot (fig \@ref(fig:volcanoPlotCharacter)). Differentially expressed words for female (table \@ref(fig:femaleCharTable)) and male (table \@ref(fig:maleCharTable)) characters are included in the supplemental data. 
 
 ```{r volcanoPlotCharacter, fig.cap='Differential word frequency by character gender', out.width='100%'}
-data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char.csv")
+data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F_char_large.csv")
 p <- ggplot(data = data, aes(x = log2(baseMean * 1e6), y = log2FoldChange, text=sprintf("%s</br></br>log2FoldChange: %.3g</br>FDR: %.3g",X,log2FoldChange,padj), colour = padj)) +
-  geom_point(alpha = 0.4) +  
-  scale_color_gradient(low="red", high="blue", limits=c(0,.2), trans=scales::pseudo_log_trans(.000001), breaks=c(0,.001,.01,.05,.2)) +
+  geom_point(alpha = 0.6, size = .9) +  
+  scale_color_gradient(low="darkorange", high="dodgerblue", limits=c(0,.2), trans=scales::pseudo_log_trans(.000001), breaks=c(0,.001,.01,.05,.2)) +
   labs(y = "log2(fold change)", x="log2(word count)", color="False discovery rate") + 
   theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank(), panel.backgroun=element_blank(), axis.line=element_line(colour="black")) 
 p <- ggplotly(p, tooltip = c("text")) %>% toWebGL()
 p
 ```
 
-Next, I compared lexicons for male and female authors (fig \@ref(fig:volcanoPlotAuthor)). A subjective assessment of the data suggests that these differences largely are due to genre. Differentially expressed words are included in supplemental data (tables \@ref(fig:femaleAuthTable) and \@ref(fig:maleAuthTable) ).
+Next, I compared lexicons for male and female authors (fig \@ref(fig:volcanoPlotAuthor)). A subjective assessment of the data suggests that these differences may largely are due to genre. Differentially expressed words are included in supplemental data (tables \@ref(fig:femaleAuthTable) and \@ref(fig:maleAuthTable) ).
 
 ```{r volcanoPlotAuthor, fig.cap='Differential word frequency by author gender', out.width='100%'}
 data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/gender_M_vs_F.csv")
 p <- ggplot(data = data, aes(x = log2(baseMean * 1e6), y = log2FoldChange, text=sprintf("%s</br></br>log2FoldChange: %.3g</br>FDR: %.3g",X,log2FoldChange,padj), colour = padj)) +
-  geom_point(alpha = 0.4) +  
-  scale_color_gradient(low="red", high="blue", limits=c(0,.2), trans=scales::pseudo_log_trans(.000001), breaks=c(0,.001,.01,.05,.2)) +
+  geom_point(alpha = 0.6, size = .9) +  
+  scale_color_gradient(low="darkorange", high="dodgerblue", limits=c(0,.2), trans=scales::pseudo_log_trans(.000001), breaks=c(0,.001,.01,.05,.2)) +
   labs(y = "log2(fold change)", x="log2(word count)", color="False discovery rate") + 
   theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank(), panel.backgroun=element_blank(), axis.line=element_line(colour="black")) 
 p <- ggplotly(p, tooltip = c("text")) %>% toWebGL()
@@ -32,10 +32,10 @@ Words that are more frequently associated with male characters are also more fre
 data <- read.csv("C:/Users/Russell/OneDrive - UW/Linguistics/R/charAuthJoined.csv")
 data$min = rowMeans(data[c('padj_character','padj_author')], na.rm = T)
 p <- ggplot(data = data, aes(x = log2FoldChange_character, y = log2FoldChange_author, color=min, text=Word)) +
-  geom_point(alpha = 0.4) +  
+  geom_point(alpha = 0.6, size = .9) +  
   geom_hline(yintercept=0) +
   geom_vline(xintercept=0) +
-  scale_color_gradient(low="red", high="blue", limits=c(0,.2), trans=scales::pseudo_log_trans(.000001), breaks=c(0,.001,.01,.05,.2)) +
+  scale_color_gradient(low="darkorange", high="dodgerblue", limits=c(0,.2), trans=scales::pseudo_log_trans(.000001), breaks=c(0,.001,.01,.05,.2)) +
   labs(y = "log2(fold change - author)", x="log2(fold change - character)", color="False discovery rate") + 
   theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank(), panel.backgroun=element_blank(), axis.line=element_line(colour="black"), ) 
 p <- ggplotly(p, tooltip = c("text")) %>% toWebGL()
@@ -43,12 +43,14 @@ p
 ```
 
 
-Next, I trained an ensemble learner to classify characters (table \@ref(tab:charBoWClass)) and authors (table \@ref(tab:authBoWClass)) by gender using DESeq2 normalized word counts. This model classified author gender with disturbing accuracy. A bad interpretation would ignore confounding variables such as gender imbalances in genre. Goodreads.com tags are probably rather biased by author gender. Genre tags alone are only slightly less accurate at predicting author gender than the text (table \@ref(tab:tagsAuthConfusion)).
+Next, I trained an ensemble learner to classify characters (table \@ref(tab:charBoWClass)) and authors (table \@ref(tab:authBoWClass)) by gender using normalized word counts from DESeq2. This model is disturbingly good at classifying author gender. A bad interpretation would ignore confounding variables such as gender imbalances in genre. Goodreads.com tags are probably rather biased by author gender, and genre tags alone are only slightly less accurate at predicting author gender than the text (table \@ref(tab:tagsAuthConfusion)). I’m not sure how to control for this.
+
+The distinction between male and female characters was slightly larger for male authors (fig. \@ref(fig:genderScoreBoW)).  
 
 
 ```{r authBoWClass, fig.cap="Predicted author gender using bag of words."}
 DT = data.frame(TM=c(1522,292), TF=c(298,1736))
-row.names(DT) <- c("True Male","True Female")
+row.names(DT) <- c("Male Authors","Female Authors")
 knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = 'predicted author gender using bag of words.') %>%
   kable_styling(bootstrap_options = "striped", full_width = F) %>%
   column_spec(1, bold = T)
@@ -57,13 +59,12 @@ knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = '
 ```{r charBoWClass, fig.cap="Predicted character gender using bag of words."}
 # F1 score: 84.6%
 DT = data.frame(TM=c(4262,806), TF=c(738,4194))
-row.names(DT) <- c("True Male","True Female")
+row.names(DT) <- c("Male Characters","Female Characters")
 knitr::kable(DT, col.names = c("Predicted Male","Predicted Female"), caption = 'Predicted character gender using bag of words.') %>%
   kable_styling(bootstrap_options = "striped", full_width = F) %>%
   column_spec(1, bold = T)
 ```
 
-The difference between predicted gender for male and female characters was slightly larger for male authors (fig. \@ref(fig:genderScoreBoW)).  
 ```{R genderScoreBoW, fig.cap="Character gender score using bag of words."}
 images = "Images/genderScore_bow.png"
 knitr::include_graphics(images)
